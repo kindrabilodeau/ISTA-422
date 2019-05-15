@@ -3,13 +3,15 @@
 ##### Followed this tutorial: https://www.c-sharpcorner.com/article/code-first-approach-in-asp-net-core-mvc-with-ef-core-migration/
 
 1. Have Visual Studio and SQL Server installed and running
+  - I used Visual Studio 2019
 2. Open a new project in Visual Studio > select ASP.NET Core Web Application > Name it **CodeFirstMigration**
 3. On the next screen
   - At the top in the drop down bars make sure: **.NET Core** and **ASP.NET Core 2.2** is selected.
   - Select **Web Application(Model-View-Controller)**
   - Make sure authentication is set to **No Authentication**
-  - Click **OK**
-4. On the navigation bar go to Tools > NuGet Package Manager > Manage NuGet Packages for Solution
+  - Click **Create**
+4. Next to install the packages needed for Entity Framework Core:
+  - On the navigation bar go to Tools > NuGet Package Manager > Manage NuGet Packages for Solution
   - On the Browse tab search and install:  
     - **Microsoft.EntityFrameworkCore.SqlServer** v.2.2.4.
     - **Microsoft.EntityFrameworkCore.Tools**  v.2.2.4
@@ -62,6 +64,8 @@
     }  
   }  
 ````
+  - **Note** that the "Data Source" name of your connection string may be different
+  
 7. Go to the Startup.cs file:
   - Add these using directives:   
   ``using CodeFirstMigration.Context;``  

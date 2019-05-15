@@ -3,7 +3,8 @@
 ###### Followed this tutorial: https://www.codeproject.com/Tips/1046655/Very-Basic-Console-Application-Using-Entity-Framew
 
 1. Have Visual Studio and SQL Server installed and running  
-2. Create a new Console Application in Visual Studio
+2. Create a new project
+  - Select Console APP (.Net Framework)
   - Name it: **EfConsoleApplication**
 3. To add Entity Frame work:
   - On the navigation bar find "Tools"
@@ -13,15 +14,12 @@
   - Click on it and install it.
     - (I installed version 6.2.0)
 4. Add a new class
-  - Right click on solution, Find Add > Class > Name it **Model.cs**
+  - Right click on solution, Find Add > Class > Name it **Person.cs**
   - Add the following:
 ````C#
   using System;
   namespace EfConsoleApplication
   {
-      /// <summary>
-      /// The person model.
-      /// </summary>
       public class Person
       {
           public int PersonId { get; set; }
@@ -61,6 +59,8 @@
           providerName="System.Data.SqlClient"/>  
  </connectionStrings>   
  ````
+ - Note that the "Data Source" name of your connectionstring may be different
+ - You can try: connectionString="Data Source=(localdb)\mssqllocaldb;
 
 7. In the Program file add
 ````C#  
@@ -90,7 +90,7 @@
          }  
       }
 }  
-```
+````
 8. Open SQL Server and look at your databases.
   - Now you have a Database named PersonDb
   - You can see you have a Person table
